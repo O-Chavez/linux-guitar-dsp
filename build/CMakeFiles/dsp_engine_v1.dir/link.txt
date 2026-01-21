@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/dsp_engine_v1.dir/src/main.cpp.o CMakeFiles/dsp_engine_v1.dir/src/ir_loader.cpp.o CMakeFiles/dsp_engine_v1.dir/src/fft_convolver.cpp.o -o dsp_engine_v1  -ljack -lsndfile -lfftw3f -Wl,--whole-archive libnam_core.a -Wl,--no-whole-archive 

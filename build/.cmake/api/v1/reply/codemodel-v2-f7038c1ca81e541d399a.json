@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Release-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "dsp_engine_v1",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "dsp_engine_alsa::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dsp_engine_alsa-Release-8e33004e1bd12d5915b6.json",
+					"name" : "dsp_engine_alsa",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nam_core::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nam_core-Release-1465bbb86e072ed662ed.json",
+					"name" : "nam_core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "nam_synth_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-nam_synth_test-Release-d2383d691c74840e57c0.json",
+					"name" : "nam_synth_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pedal/dsp-engine-v1/build",
+		"source" : "/home/pedal/dsp-engine-v1"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
