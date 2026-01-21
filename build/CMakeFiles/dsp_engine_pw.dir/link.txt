@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/dsp_engine_pw.dir/src/main_pipewire.cpp.o CMakeFiles/dsp_engine_pw.dir/src/ir_loader.cpp.o CMakeFiles/dsp_engine_pw.dir/src/fft_convolver.cpp.o -o dsp_engine_pw  -lpipewire-0.3 -lsndfile -lfftw3f -Wl,--whole-archive libnam_core.a -Wl,--no-whole-archive 

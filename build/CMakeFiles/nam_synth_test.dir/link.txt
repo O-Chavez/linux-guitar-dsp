@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/nam_synth_test.dir/src/nam_synth_test.cpp.o -o nam_synth_test  -lsndfile -Wl,--whole-archive libnam_core.a -Wl,--no-whole-archive -lpthread 

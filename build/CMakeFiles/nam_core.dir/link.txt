@@ -1,2 +1,0 @@
-/usr/bin/ar qc libnam_core.a CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/activations.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/convnet.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/dsp.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/get_dsp.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/lstm.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/util.cpp.o CMakeFiles/nam_core.dir/third_party/NeuralAmpModelerCore/NAM/wavenet.cpp.o
-/usr/bin/ranlib libnam_core.a

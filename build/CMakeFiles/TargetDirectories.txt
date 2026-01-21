@@ -1,5 +1,0 @@
-/home/pedal/dsp-engine-v1/build/CMakeFiles/nam_core.dir
-/home/pedal/dsp-engine-v1/build/CMakeFiles/dsp_engine_alsa.dir
-/home/pedal/dsp-engine-v1/build/CMakeFiles/nam_synth_test.dir
-/home/pedal/dsp-engine-v1/build/CMakeFiles/edit_cache.dir
-/home/pedal/dsp-engine-v1/build/CMakeFiles/rebuild_cache.dir

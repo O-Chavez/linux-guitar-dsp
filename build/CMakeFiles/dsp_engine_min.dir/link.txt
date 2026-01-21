@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/dsp_engine_min.dir/src/pw_minidsp.cpp.o -o dsp_engine_min  -lpipewire-0.3 -lpthread 
