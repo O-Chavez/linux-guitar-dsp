@@ -8,6 +8,7 @@ foreground.log
 
 # Node/React app (when added under app/)
 app/**/node_modules/
+app/**/node_modules/
 app/**/.pnp.*
 app/**/.yarn/
 app/**/dist/

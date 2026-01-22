@@ -171,7 +171,7 @@ echo '{"cmd":"get_chain"}'  | socat - UNIX-CONNECT:/tmp/pedal-dsp.sock
 PipeWire/JACK engines and routing scripts are kept for reference only.
 They are not part of the supported day-to-day path.
 
-Legacy sources live in deprecated/src and are built only when:
+Legacy sources live in engine/deprecated/src and are built only when:
 `-DBUILD_LEGACY_ENGINES=ON`
 
 ## Services (no auto-start)
@@ -179,21 +179,21 @@ Legacy sources live in deprecated/src and are built only when:
 The install script copies service units but does **not** enable them by default.
 This prevents legacy auto-start triggers from interfering with manual runs.
 
-- `systemd/dsp-engine-alsa.service`
+- `engine/systemd/dsp-engine-alsa.service`
 
 To install user units:
 ```
-./scripts/install_user_service.sh
+./engine/scripts/install_user_service.sh
 ```
 
 ## Primary folders (project + runtime)
 
 Project tree:
-- [src/](src/) — current engine sources (ALSA direct).
-- [scripts/](scripts/) — wiring helpers + install tooling.
-- [systemd/](systemd/) — service unit files.
-- [third_party/](third_party/) — vendored dependencies (NAM core).
-- [deprecated/](deprecated/) — legacy PipeWire/JACK sources (optional build).
+- [engine/src/](engine/src/) — current engine sources (ALSA direct).
+- [engine/scripts/](engine/scripts/) — wiring helpers + install tooling.
+- [engine/systemd/](engine/systemd/) — service unit files.
+- [engine/third_party/](engine/third_party/) — vendored dependencies (NAM core).
+- [engine/deprecated/](engine/deprecated/) — legacy PipeWire/JACK sources (optional build).
 - [build/](build/) — CMake output (local, generated).
 - [app/](app/) — Node/React UI + control app (monorepo; add your app here).
 
@@ -203,7 +203,7 @@ Runtime (default paths used by the appliance setup):
 ## UI / control app (monorepo)
 
 This repo is set up to host a Node/React control UI in [app/](app/).
-Keeping the DSP engine at repo root avoids breaking existing CMake paths, `start_alsa.sh`, and the systemd unit.
+The DSP engine sources live in [engine/](engine/), with compatibility shims at repo root for `start_alsa.sh` and build output under [build/](build/).
 
 Suggested flow:
 - Copy your existing Node/React project files into `app/`.
