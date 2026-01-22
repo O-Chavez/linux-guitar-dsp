@@ -88,29 +88,6 @@ build_engine_if_needed() {
   cmake --build "$BUILD_DIR" -j
 }
 
-wait_for_socket() {
-  if [ "$WAIT_SOCK" != "1" ]; then
-    return 0
-  fi
-
-  # Wait briefly for the engine to expose its control socket before starting the UI.
-  # This reduces race conditions where the server/UI boots before the engine is ready.
-  local deadline now
-  deadline=$(( $(date +%s) + WAIT_SOCK_SECS ))
-  while :; do
-    if [ -S "$DSP_SOCK_PATH" ]; then
-      echo "DSP control socket ready: $DSP_SOCK_PATH"
-      return 0
-    fi
-    now=$(date +%s)
-    if [ "$now" -ge "$deadline" ]; then
-      echo "Warning: DSP control socket not found after ${WAIT_SOCK_SECS}s ($DSP_SOCK_PATH). Continuing..." >&2
-      return 0
-    fi
-    sleep 0.1
-  done
-}
-
 cleanup() {
   echo ""
   echo "Stopping DSP engine..."
@@ -118,13 +95,60 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
+tail_engine_log() {
+  local n="${1:-120}"
+  local p
+
+  # start_alsa.sh writes here by default (falls back to /tmp if it can't create it).
+  for p in "${XDG_STATE_HOME:-$HOME/.local/state}/dsp-engine-v1/dsp_engine_alsa.log" \
+           "$HOME/.local/state/dsp-engine-v1/dsp_engine_alsa.log" \
+           "/tmp/dsp-engine-v1/dsp_engine_alsa.log"; do
+    if [ -f "$p" ]; then
+      echo "--- tail $n: $p ---" >&2
+      tail -n "$n" "$p" >&2 || true
+      echo "--- end log ---" >&2
+      return 0
+    fi
+  done
+
+  echo "(engine log not found; expected under ~/.local/state/dsp-engine-v1 or /tmp/dsp-engine-v1)" >&2
+}
+
+wait_for_engine_ready() {
+  local deadline now
+  deadline=$(( $(date +%s) + WAIT_SOCK_SECS ))
+
+  while :; do
+    if ! kill -0 "$ENGINE_WRAPPER_PID" 2>/dev/null; then
+      echo "Engine wrapper exited during startup." >&2
+      tail_engine_log 200
+      return 1
+    fi
+
+    if [ "$WAIT_SOCK" = "1" ] && [ -S "$DSP_SOCK_PATH" ]; then
+      echo "DSP control socket ready: $DSP_SOCK_PATH"
+      return 0
+    fi
+
+    now=$(date +%s)
+    if [ "$WAIT_SOCK" != "1" ] || [ "$now" -ge "$deadline" ]; then
+      if [ "$WAIT_SOCK" = "1" ] && [ ! -S "$DSP_SOCK_PATH" ]; then
+        echo "Warning: DSP control socket not found after ${WAIT_SOCK_SECS}s ($DSP_SOCK_PATH). Continuing..." >&2
+      fi
+      return 0
+    fi
+
+    sleep 0.1
+  done
+}
+
 build_engine_if_needed
 
 echo "Starting DSP engine (ALSA) profile=$ENGINE_PROFILE ..."
 "$ROOT_DIR/start_alsa.sh" "$ENGINE_PROFILE" &
 ENGINE_WRAPPER_PID=$!
 
-wait_for_socket
+wait_for_engine_ready
 
 # UI stack (installs deps if missing)
 "$ROOT_DIR/scripts/dev_app.sh"
