@@ -31,6 +31,12 @@ Full dev stack (engine + UI):
 ./scripts/dev_all.sh
 ```
 
+Troubleshooting / clean rebuild:
+```
+./scripts/dev_all.sh --safe
+./scripts/dev_all.sh --rebuild
+```
+
 Baseline profiles (recommended):
 ```
 ./start_alsa.sh start-safe
