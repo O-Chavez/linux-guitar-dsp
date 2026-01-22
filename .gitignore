@@ -1,11 +1,27 @@
-# build artifacts
+# Build artifacts (CMake / general)
 build/
 **/build/
+
+# Logs / local runtime outputs
+*.log
+foreground.log
+
+# Node/React app (when added under app/)
+app/**/node_modules/
+app/**/.pnp.*
+app/**/.yarn/
+app/**/dist/
+app/**/build/
+app/**/.next/
+app/**/out/
+app/**/coverage/
+app/**/.env
+app/**/.env.*
 
 # IDE / tooling
 .vscode/
 .vscode-server/
 compile_commands.json
 
-# logs / state
-*.log
+# OS
+.DS_Store

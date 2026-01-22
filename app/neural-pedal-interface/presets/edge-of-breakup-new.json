@@ -1,0 +1,81 @@
+{
+  "id": "edge-of-breakup",
+  "name": "Edge of Breakup",
+  "pedals": [
+    {
+      "id": "pedal-comp",
+      "type": "pedal",
+      "category": "compressor",
+      "model": "Keeley Compressor",
+      "enabled": true,
+      "position": 0,
+      "params": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.3,
+        "tone": 0.5
+      }
+    },
+    {
+      "id": "pedal-klon",
+      "type": "pedal",
+      "category": "overdrive",
+      "model": "Klon Centaur",
+      "enabled": true,
+      "position": 1,
+      "params": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.4,
+        "tone": 0.5,
+        "low": 0.5,
+        "mid": 0.6,
+        "high": 0.6
+      }
+    },
+    {
+      "id": "pedal-ts",
+      "type": "pedal",
+      "category": "overdrive",
+      "model": "TS-808 Tube Screamer",
+      "enabled": true,
+      "position": 2,
+      "params": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.3,
+        "tone": 0.6,
+        "low": 0.5,
+        "mid": 0.7,
+        "high": 0.5
+      }
+    }
+  ],
+  "amp": {
+    "id": "amp",
+    "type": "amp",
+    "model": "Fender Deluxe Reverb",
+    "enabled": true,
+    "includesCabinet": false,
+    "params": {
+      "input": 0.5,
+      "output": 0.7,
+      "gain": 0.5,
+      "master": 0.7,
+      "low": 0.5,
+      "mid": 0.5,
+      "high": 0.6,
+      "presence": 0.5
+    }
+  },
+  "cabinet": {
+    "id": "cabinet",
+    "type": "cabinet",
+    "model": "1x12 Jensen P12Q",
+    "enabled": true,
+    "params": {
+      "output": 0.8,
+      "mix": 1.0
+    }
+  }
+}

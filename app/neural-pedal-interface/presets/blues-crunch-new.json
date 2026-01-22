@@ -1,0 +1,65 @@
+{
+  "id": "blues-crunch",
+  "name": "Blues Crunch",
+  "pedals": [
+    {
+      "id": "pedal-booster",
+      "type": "pedal",
+      "category": "boost",
+      "model": "Xotic EP Booster",
+      "enabled": true,
+      "position": 0,
+      "params": {
+        "input": 0.5,
+        "output": 0.8,
+        "low": 0.5,
+        "mid": 0.5,
+        "high": 0.6
+      }
+    },
+    {
+      "id": "pedal-ocd",
+      "type": "pedal",
+      "category": "overdrive",
+      "model": "Fulltone OCD",
+      "enabled": true,
+      "position": 1,
+      "params": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.5,
+        "tone": 0.6,
+        "low": 0.5,
+        "mid": 0.6,
+        "high": 0.5
+      }
+    }
+  ],
+  "amp": {
+    "id": "amp",
+    "type": "amp",
+    "model": "Marshall JCM800",
+    "enabled": true,
+    "includesCabinet": false,
+    "params": {
+      "input": 0.5,
+      "output": 0.7,
+      "gain": 0.6,
+      "master": 0.6,
+      "low": 0.6,
+      "mid": 0.6,
+      "high": 0.7,
+      "presence": 0.6
+    }
+  },
+  "cabinet": {
+    "id": "cabinet",
+    "type": "cabinet",
+    "model": "4x12 Celestion Greenback",
+    "enabled": true,
+    "params": {
+      "output": 0.8,
+      "mix": 1.0
+    }
+  }
+}

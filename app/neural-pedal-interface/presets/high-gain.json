@@ -1,0 +1,53 @@
+{
+  "id": "high-gain",
+  "name": "High Gain Lead",
+  "blocks": [
+    {
+      "id": "comp",
+      "type": "compressor",
+      "enabled": true,
+      "params": {
+        "threshold": -12,
+        "ratio": 4
+      }
+    },
+    {
+      "id": "klon",
+      "type": "nam",
+      "enabled": true,
+      "model": "klon_gold.nam",
+      "params": {
+        "gain": 0.6,
+        "level": 0.8
+      }
+    },
+    {
+      "id": "ts",
+      "type": "nam",
+      "enabled": true,
+      "model": "ts808.nam",
+      "params": {
+        "gain": 0.7,
+        "level": 0.9
+      }
+    },
+    {
+      "id": "amp",
+      "type": "nam",
+      "enabled": true,
+      "model": "deluxe_reverb.nam",
+      "params": {
+        "gain": 0.8
+      }
+    },
+    {
+      "id": "cab",
+      "type": "ir",
+      "enabled": true,
+      "file": "1x12_jensen.wav",
+      "params": {
+        "mix": 1.0
+      }
+    }
+  ]
+}

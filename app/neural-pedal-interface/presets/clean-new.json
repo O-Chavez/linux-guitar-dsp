@@ -1,0 +1,47 @@
+{
+  "id": "clean",
+  "name": "Clean Tone",
+  "pedals": [
+    {
+      "id": "pedal-comp",
+      "type": "pedal",
+      "category": "compressor",
+      "model": "Keeley Compressor",
+      "enabled": true,
+      "position": 0,
+      "params": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.24,
+        "tone": 0.5
+      }
+    }
+  ],
+  "amp": {
+    "id": "amp",
+    "type": "amp",
+    "model": "Fender Deluxe Reverb",
+    "enabled": true,
+    "includesCabinet": false,
+    "params": {
+      "input": 0.5,
+      "output": 0.7,
+      "gain": 0.3,
+      "master": 0.7,
+      "low": 0.5,
+      "mid": 0.5,
+      "high": 0.6,
+      "presence": 0.5
+    }
+  },
+  "cabinet": {
+    "id": "cabinet",
+    "type": "cabinet",
+    "model": "1x12 Jensen P12Q",
+    "enabled": true,
+    "params": {
+      "output": 0.8,
+      "mix": 1.0
+    }
+  }
+}

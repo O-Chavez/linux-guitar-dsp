@@ -1,0 +1,53 @@
+{
+  "id": "clean",
+  "name": "Clean Tone",
+  "blocks": [
+    {
+      "id": "comp",
+      "type": "compressor",
+      "enabled": true,
+      "params": {
+        "threshold": -24,
+        "ratio": 2
+      }
+    },
+    {
+      "id": "klon",
+      "type": "nam",
+      "enabled": false,
+      "model": "klon_gold.nam",
+      "params": {
+        "gain": 0,
+        "level": 0.5
+      }
+    },
+    {
+      "id": "ts",
+      "type": "nam",
+      "enabled": false,
+      "model": "ts808.nam",
+      "params": {
+        "gain": 0,
+        "level": 0.5
+      }
+    },
+    {
+      "id": "amp",
+      "type": "nam",
+      "enabled": true,
+      "model": "deluxe_reverb.nam",
+      "params": {
+        "gain": 0.3
+      }
+    },
+    {
+      "id": "cab",
+      "type": "ir",
+      "enabled": true,
+      "file": "1x12_jensen.wav",
+      "params": {
+        "mix": 1.0
+      }
+    }
+  ]
+}

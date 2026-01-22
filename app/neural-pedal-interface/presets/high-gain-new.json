@@ -1,0 +1,50 @@
+{
+  "id": "high-gain",
+  "name": "High Gain Metal",
+  "pedals": [
+    {
+      "id": "pedal-ds1",
+      "type": "pedal",
+      "category": "distortion",
+      "model": "Boss DS-1",
+      "enabled": true,
+      "position": 0,
+      "params": {
+        "input": 0.5,
+        "output": 0.8,
+        "drive": 0.7,
+        "tone": 0.6,
+        "low": 0.6,
+        "mid": 0.5,
+        "high": 0.5
+      }
+    }
+  ],
+  "amp": {
+    "id": "amp",
+    "type": "amp",
+    "model": "Mesa Dual Rectifier",
+    "enabled": true,
+    "includesCabinet": false,
+    "params": {
+      "input": 0.5,
+      "output": 0.7,
+      "gain": 0.8,
+      "master": 0.6,
+      "low": 0.7,
+      "mid": 0.5,
+      "high": 0.6,
+      "presence": 0.7
+    }
+  },
+  "cabinet": {
+    "id": "cabinet",
+    "type": "cabinet",
+    "model": "4x12 Celestion V30",
+    "enabled": true,
+    "params": {
+      "output": 0.8,
+      "mix": 1.0
+    }
+  }
+}

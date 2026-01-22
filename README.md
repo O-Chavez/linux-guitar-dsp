@@ -195,9 +195,20 @@ Project tree:
 - [third_party/](third_party/) — vendored dependencies (NAM core).
 - [deprecated/](deprecated/) — legacy PipeWire/JACK sources (optional build).
 - [build/](build/) — CMake output (local, generated).
+- [app/](app/) — Node/React UI + control app (monorepo; add your app here).
 
 Runtime (default paths used by the appliance setup):
 - /opt/pedal/config/chain.json — active config (model + IR paths).
+
+## UI / control app (monorepo)
+
+This repo is set up to host a Node/React control UI in [app/](app/).
+Keeping the DSP engine at repo root avoids breaking existing CMake paths, `start_alsa.sh`, and the systemd unit.
+
+Suggested flow:
+- Copy your existing Node/React project files into `app/`.
+- Use `app/`’s own package manager scripts to build/run the UI.
+- Orchestrate the engine via the control socket (`/tmp/pedal-dsp.sock` by default).
 - /opt/pedal/assets/ — optional bundled assets (e.g., default models/IRs/configs).
 - /opt/pedal/models/ — NAM model files (typical convention).
 - /opt/pedal/irs/ — IR WAVs (typical convention).

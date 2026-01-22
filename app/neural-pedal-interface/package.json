@@ -1,0 +1,19 @@
+{
+  "name": "neural-pedal-interface",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:shared": "npm run watch -w @ampbox/shared",
+    "dev:server": "npm run dev -w server",
+    "dev:ui": "npm run dev -w ui",
+    "dev": "concurrently -n shared,server,ui -c yellow,blue,green \"npm run dev:shared\" \"npm run dev:server\" \"npm run dev:ui\"",
+    "build": "npm run build -w @ampbox/shared && npm run build -w server && npm run build -w ui",
+    "lint": "npm run lint -w ui"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

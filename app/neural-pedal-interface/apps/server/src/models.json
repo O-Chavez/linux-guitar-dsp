@@ -1,0 +1,212 @@
+{
+  "pedals": [
+    {
+      "id": "ts808",
+      "name": "TS-808 Tube Screamer",
+      "category": "overdrive",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.5,
+        "tone": 0.6,
+        "low": 0.5,
+        "mid": 0.7,
+        "high": 0.5
+      }
+    },
+    {
+      "id": "klon",
+      "name": "Klon Centaur",
+      "category": "overdrive",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.4,
+        "tone": 0.5,
+        "low": 0.5,
+        "mid": 0.6,
+        "high": 0.6
+      }
+    },
+    {
+      "id": "big-muff",
+      "name": "Big Muff Pi",
+      "category": "fuzz",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.6,
+        "drive": 0.7,
+        "tone": 0.5,
+        "low": 0.7,
+        "mid": 0.4,
+        "high": 0.6
+      }
+    },
+    {
+      "id": "ds1",
+      "name": "Boss DS-1",
+      "category": "distortion",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.6,
+        "tone": 0.6,
+        "low": 0.6,
+        "mid": 0.5,
+        "high": 0.5
+      }
+    },
+    {
+      "id": "ocd",
+      "name": "Fulltone OCD",
+      "category": "overdrive",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.5,
+        "tone": 0.6,
+        "low": 0.5,
+        "mid": 0.6,
+        "high": 0.5
+      }
+    },
+    {
+      "id": "ep-booster",
+      "name": "Xotic EP Booster",
+      "category": "boost",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.8,
+        "low": 0.5,
+        "mid": 0.5,
+        "high": 0.6
+      }
+    },
+    {
+      "id": "compressor",
+      "name": "Keeley Compressor",
+      "category": "compressor",
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "drive": 0.3,
+        "tone": 0.5
+      }
+    }
+  ],
+  "amps": [
+    {
+      "id": "deluxe-reverb",
+      "name": "Fender Deluxe Reverb",
+      "includesCabinet": false,
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "gain": 0.4,
+        "master": 0.7,
+        "low": 0.5,
+        "mid": 0.5,
+        "high": 0.6,
+        "presence": 0.5
+      }
+    },
+    {
+      "id": "jcm800",
+      "name": "Marshall JCM800",
+      "includesCabinet": false,
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "gain": 0.7,
+        "master": 0.6,
+        "low": 0.6,
+        "mid": 0.6,
+        "high": 0.7,
+        "presence": 0.6
+      }
+    },
+    {
+      "id": "plexi",
+      "name": "Marshall Plexi",
+      "includesCabinet": false,
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "gain": 0.6,
+        "master": 0.6,
+        "low": 0.5,
+        "mid": 0.5,
+        "high": 0.6,
+        "presence": 0.5
+      }
+    },
+    {
+      "id": "ac30",
+      "name": "Vox AC30",
+      "includesCabinet": false,
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "gain": 0.5,
+        "master": 0.6,
+        "low": 0.5,
+        "mid": 0.6,
+        "high": 0.7,
+        "presence": 0.6
+      }
+    },
+    {
+      "id": "rectifier",
+      "name": "Mesa Dual Rectifier",
+      "includesCabinet": false,
+      "defaultParams": {
+        "input": 0.5,
+        "output": 0.7,
+        "gain": 0.8,
+        "master": 0.6,
+        "low": 0.7,
+        "mid": 0.5,
+        "high": 0.6,
+        "presence": 0.7
+      }
+    }
+  ],
+  "cabinets": [
+    {
+      "id": "1x12-jensen",
+      "name": "1x12 Jensen P12Q",
+      "irFile": "1x12_jensen.wav",
+      "defaultParams": {
+        "output": 0.8,
+        "mix": 1.0
+      }
+    },
+    {
+      "id": "4x12-greenback",
+      "name": "4x12 Celestion Greenback",
+      "irFile": "4x12_greenback.wav",
+      "defaultParams": {
+        "output": 0.8,
+        "mix": 1.0
+      }
+    },
+    {
+      "id": "4x12-v30",
+      "name": "4x12 Celestion V30",
+      "irFile": "4x12_v30.wav",
+      "defaultParams": {
+        "output": 0.8,
+        "mix": 1.0
+      }
+    },
+    {
+      "id": "2x12-blue",
+      "name": "2x12 Celestion Blue",
+      "irFile": "2x12_blue.wav",
+      "defaultParams": {
+        "output": 0.8,
+        "mix": 1.0
+      }
+    }
+  ]
+}
