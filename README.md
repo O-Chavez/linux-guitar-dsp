@@ -64,6 +64,35 @@ Baseline enforcement / checks:
 - `ALSA_CAPTURE_SANITY_SECS=2`: duration of input sanity check window.
 - `ALSA_CAPTURE_SILENT_PEAK=1e-5`: peak threshold for “capture appears silent” warning.
 
+## Stable baseline (project policy)
+
+This project has a known-good “stable baseline” saved and tagged in git.
+If stability regresses, revert to the most recent baseline tag/commit and re-test.
+
+### Future development checklist (copy/paste)
+
+Keep these in mind whenever working on this project in the future:
+
+- Never modify `third_party/NeuralAmpModelerCore` directly. Any changes must go to the fork and then update the submodule pointer.
+- Never commit build artifacts. `build/` must stay ignored.
+
+Before changing anything: run
+```
+git status && git submodule status
+```
+and paste outputs.
+
+Any performance work must include:
+
+- build type = Release
+- log line showing `chain_us_max`, `deadline_us`, and xrun counts
+-
+```
+ps -Leo pid,cls,rtprio,pri,ni,cmd | grep dsp_engine_alsa
+```
+
+If a change worsens stability: revert immediately to the last “baseline” commit and re-test.
+
 ### Environment knobs
 - `ALSA_DEVICE` (default `hw:0,0`)
 - `ALSA_CAPTURE_DEVICE` / `ALSA_PLAYBACK_DEVICE` (override capture/playback separately; fall back to `ALSA_DEVICE`)
