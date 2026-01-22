@@ -1,7 +1,11 @@
-
-# build artifacts
-build/
-
 # build artifacts
 build/
 **/build/
+
+# IDE / tooling
+.vscode/
+.vscode-server/
+compile_commands.json
+
+# logs / state
+*.log
