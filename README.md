@@ -26,6 +26,11 @@ Quick run example:
 ./start_alsa.sh start
 ```
 
+Full dev stack (engine + UI):
+```
+./scripts/dev_all.sh
+```
+
 Baseline profiles (recommended):
 ```
 ./start_alsa.sh start-safe
