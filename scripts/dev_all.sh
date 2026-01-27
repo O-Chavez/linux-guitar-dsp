@@ -77,6 +77,23 @@ if ! command -v npm >/dev/null 2>&1; then
   exit 127
 fi
 
+# UI tooling requires Node >= 20.19.0 (Vite/rolldown-vite).
+NODE_VERSION="$(node -v 2>/dev/null | sed 's/^v//' || true)"
+NODE_MAJOR="$(printf '%s' "$NODE_VERSION" | cut -d. -f1)"
+NODE_MINOR="$(printf '%s' "$NODE_VERSION" | cut -d. -f2)"
+if [ "${ALLOW_UNSUPPORTED_NODE:-0}" != "1" ]; then
+  if [ -z "$NODE_VERSION" ]; then
+    echo "Error: node not found in PATH." >&2
+    exit 127
+  fi
+  if [ "${NODE_MAJOR:-0}" -lt 20 ] || { [ "${NODE_MAJOR:-0}" -eq 20 ] && [ "${NODE_MINOR:-0}" -lt 19 ]; }; then
+    echo "Error: Node v$NODE_VERSION detected; UI requires Node >= 20.19.0 (or 22.12+)." >&2
+    echo "Recommended: cd app/neural-pedal-interface && nvm install && nvm use" >&2
+    echo "Override (not recommended): ALLOW_UNSUPPORTED_NODE=1" >&2
+    exit 2
+  fi
+fi
+
 build_engine_if_needed() {
   if [ "$SKIP_BUILD" = "1" ]; then
     return 0
