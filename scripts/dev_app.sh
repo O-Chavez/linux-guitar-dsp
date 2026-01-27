@@ -64,9 +64,13 @@ if [ ! -d node_modules ] || [ "$needs_reinstall" = "1" ]; then
 
   echo "Installing app dependencies (npm workspaces)..."
   if [ -f package-lock.json ]; then
-    npm ci
+    if ! npm ci --include=optional; then
+      echo "npm ci failed; retrying with npm install (optional deps included)..." >&2
+      rm -rf node_modules apps/*/node_modules packages/*/node_modules
+      npm install --include=optional
+    fi
   else
-    npm install
+    npm install --include=optional
   fi
 fi
 
