@@ -6,6 +6,14 @@ ENGINE_CMD=("$ROOT_DIR/start_alsa.sh" start-lowlat)
 ENGINE_STOP=("$ROOT_DIR/start_alsa.sh" stop)
 APP_DIR="$ROOT_DIR/app/neural-pedal-interface"
 
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Error: npm not found in PATH." >&2
+  echo "Install Node.js + npm (recommended Node 18/20 LTS), then re-run." >&2
+  echo "Ubuntu/Debian: sudo apt-get update && sudo apt-get install -y nodejs npm" >&2
+  echo "Or use nvm: https://github.com/nvm-sh/nvm" >&2
+  exit 127
+fi
+
 if [ ! -d "$APP_DIR" ]; then
   echo "Missing app directory: $APP_DIR" >&2
   exit 1

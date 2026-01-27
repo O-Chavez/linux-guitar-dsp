@@ -69,6 +69,14 @@ if [ ! -d "$APP_DIR" ]; then
   exit 1
 fi
 
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Error: npm not found in PATH." >&2
+  echo "Install Node.js + npm (recommended Node 18/20 LTS), then re-run." >&2
+  echo "Ubuntu/Debian: sudo apt-get update && sudo apt-get install -y nodejs npm" >&2
+  echo "Or use nvm: https://github.com/nvm-sh/nvm" >&2
+  exit 127
+fi
+
 build_engine_if_needed() {
   if [ "$SKIP_BUILD" = "1" ]; then
     return 0
